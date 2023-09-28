@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import StarRating from "@/components/Rating/StarRating"
-
+import Hero from "@/components/Hero/Hero"
 export default function Home() {
   const [products, setProducts] = useState([])
   const [Sproducts, setSProducts] = useState([])
@@ -15,6 +15,8 @@ export default function Home() {
 
   return (
     <>
+      <Hero />
+
       <h1
         className="text-2xl font-bold mb-4 text-brown-text-brown  "
         style={{ fontFamily: "Mooli" }}
