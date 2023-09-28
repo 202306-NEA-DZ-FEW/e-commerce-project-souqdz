@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import Card from "@/components/Card/Card"
+import Card from "@/components/ShoppingCard/ShoppingCard"
 
 const buttonStyle = {
   backgroundColor: "#BC9B7F",
