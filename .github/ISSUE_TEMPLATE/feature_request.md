@@ -3,11 +3,10 @@ name: Feature request
 about: Add  a featrue to this project
 title: "[Feature] : "
 labels: enhancement, feature
-assignees: ''
-
+assignees: ""
 ---
 
-**Please Describe the feature.** 
+**Please Describe the feature.**
 A clear and concise description of what the feature is [...].
 
 **Describe the solution you'd like**
