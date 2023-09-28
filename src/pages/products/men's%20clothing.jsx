@@ -34,7 +34,7 @@ export default function mencloth({ menclothData }) {
           </div>
           <div className="grid grid-cols-4 gap-6 ml-16 mr-16 my-10">
             {menclothData.map((product) => (
-              <Card key={id} {...product} />
+              <Card key={product.id} {...product} />
             ))}
           </div>
         </div>
