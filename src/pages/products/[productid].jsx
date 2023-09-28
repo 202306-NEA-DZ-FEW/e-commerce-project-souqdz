@@ -100,8 +100,9 @@ export default function productPage({ productData }) {
 }
 
 export async function getServerSideProps(context) {
-  const { productId } = context.query
-  const url = `https://fakestoreapi.com/products/${productId}`
+  const { productid } = context.params
+  const url = `https://fakestoreapi.com/products/${productid}`
+  console.log(context.params, context.query, "hello", productid)
 
   const options = {
     method: "GET",
@@ -112,7 +113,6 @@ export async function getServerSideProps(context) {
 
   const response = await fetch(url, options)
   const data = await response.json()
-  console.log(data)
 
   return {
     props: {
