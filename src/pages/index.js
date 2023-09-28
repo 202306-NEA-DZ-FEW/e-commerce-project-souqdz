@@ -1,16 +1,10 @@
-import Image from "next/image"
 import { useEffect, useState } from "react"
 import StarRating from "@/components/Rating/StarRating"
+
 export default function Home() {
   const [products, setProducts] = useState([])
   const [Sproducts, setSProducts] = useState([])
-  const [currentIndex, setCurrentIndex] = useState(0)
-  // function fetchingSlider (){
-  //   fetch('https://fakestoreapi.com/products?limit=5')
-  //   .then(res => res.json())
-  //   .then(data => setSProducts(data))
-  //   .catch(error => console.error('Error fetching data:', error));
-  //  }
+
   useEffect(() => {
     // fetchingSlider ()
     fetch("https://fakestoreapi.com/products?limit=6")
@@ -19,25 +13,12 @@ export default function Home() {
       .catch((error) => console.error("Error fetching data:", error))
   }, [])
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setCurrentIndex(prevIndex => (prevIndex + 1) % products.length);
-  //     }, 2000);
-
-  //     return () => clearInterval(interval);
-  //   }, [Sproducts]);
-  // console.log(products);
-
   return (
     <>
-      {/* <div className="w-64 carousel rounded-box mt-2">
-        {Sproducts.map((product, index) => (
-          <div key={index} className={`carousel-item w-full ${index === currentIndex ? 'block' : 'hidden'}`}>
-            <img src={product.image} className="w-full" alt={product.title} />
-          </div>
-        ))}
-      </div> */}
-      <h1 className="text-2xl font-bold mb-4 text-brown-text-brown">
+      <h1
+        className="text-2xl font-bold mb-4 text-brown-text-brown  "
+        style={{ fontFamily: "Mooli" }}
+      >
         Products List
       </h1>
       <div className="border-b border-brown-gold-g mb-6"></div>
@@ -53,7 +34,10 @@ export default function Home() {
               />
             </figure>
             <div className="card-body text-center">
-              <h2 className="card-title text-brown-text-brown mb-2 ">
+              <h2
+                className="card-title text-brown-text-brown mb-2 "
+                style={{ fontFamily: "Jost, Mooli, sans-serif" }}
+              >
                 {product.title.length > 25
                   ? `${product.title.slice(0, 25)}...`
                   : product.title}
