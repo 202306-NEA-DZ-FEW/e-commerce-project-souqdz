@@ -1,12 +1,11 @@
 import Image from "next/image"
-import CartPage from "./cartPage/CartPage"
+// import CartPage from "./cartPage/CartPage"
 
 export default function Home() {
   return (
     <div className="bg-gold-g w-full h-full">
       {/* i exported the cart page to the home page to test the code  */}
-      {/* <h1>hi</h1> */}
-      {/* <CartPage /> */}
+      {/* <h1>hi</h1>  */}
     </div>
   )
 }
@@ -80,11 +79,11 @@ export default function Home() {
 //             </form>
 //           </div>
 //         </div>
-//       </div>
+//     </div>
 
-//       <h1>Products</h1>
-//       <ul className="divide-y divide-gray-200">
-//         {products.map((product) => (
+//        <h1>Products</h1>
+//        <ul className="divide-y divide-gray-200">
+//          {products.map((product) => (
 //           <li
 //             key={product.id}
 //             className="relative bg-white py-5 px-4 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50"
