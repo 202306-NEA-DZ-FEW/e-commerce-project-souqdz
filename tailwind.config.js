@@ -11,8 +11,8 @@ module.exports = {
         "gold-g": "#7B7255",
         "pale-thing": "#EFEDE9",
         "text-brown": "#5A5042",
-        buttongold: "#BC9B7F",
-        buttongoldhov: "#886333",
+        "buttongold": "#BC9B7F",
+        "buttongoldhov": "#886333",
       },
 
       backgroundImage: {
