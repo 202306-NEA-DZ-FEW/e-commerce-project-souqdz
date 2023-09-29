@@ -1,7 +1,7 @@
 import StarRating from "../Rating/StarRating"
 import Link from "next/link"
 //import { motion } from "framer-motion";
-import styles from "../../styles/ShoppingCard.module.css" // Import your CSS file
+import styles from "../../styles/ShoppingCard.module.css"
 export default function ShoppingCard({ id, title, image, price, rating }) {
   return (
     <Link href={`/products/${id}`}>
