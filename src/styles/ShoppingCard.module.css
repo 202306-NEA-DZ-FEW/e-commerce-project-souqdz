@@ -1,0 +1,7 @@
+.shoppingCard {
+  transition: transform 0.2s ease; /* Apply a transition on the transform property */
+}
+
+.shoppingCard:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
