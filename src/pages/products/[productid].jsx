@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import StarRating from "@/components/Rating/StarRating"
-
+import { productsFetcher } from "@/util/API"
 function splitTitleIntoLines(title) {
   const words = title.split(" ")
   const lines = []
