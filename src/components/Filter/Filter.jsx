@@ -62,7 +62,7 @@ const Filter = ({
         ))}
       </div>
 
-      <div className=" flex flex-col  items-start">
+      <div className=" flex flex-col  items-start mt-8">
         <label>Price Range:</label>
         {priceRanges.map((range, index) => (
           <label className="flex items-center" key={index}>

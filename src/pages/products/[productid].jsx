@@ -72,7 +72,7 @@ export default function productPage({ productData }) {
           </div>
           <div className=" mt-20"></div>
           <div className="absolute bottom-3 left-3">
-            <Link href="/">
+            <Link href="/products">
               <button className="bg-buttongold opacity-100 hover:bg-buttongoldhov opacity-80 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold flex items-center">
                 <i className="mdi mdi-cart -ml-2 mr-2"></i>
                 <svg

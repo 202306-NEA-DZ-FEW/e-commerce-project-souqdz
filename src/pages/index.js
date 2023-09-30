@@ -25,14 +25,14 @@ export default function Home() {
         Products List
       </h1>
       <div className="border-b border-gold-g mb-6"></div>
-      <div className="grid grid-cols-3 gap-6 ml-16 mr-16 my-10">
+      <div className="grid grid-cols-3 gap-6 ml-24 mr-24 my-10">
         {products.map((product) => (
           <ShoppingCard key={product.id} {...product} />
         ))}
       </div>
 
       <div className="flex justify-center my-6  ">
-        <Link href="/products" target="_BLANK">
+        <Link href="/products">
           <button className="btn bg-buttongold text-brown-text-brown px-4 py-2 rounded-full hover:bg-buttongoldhov mb-4">
             see more products
           </button>

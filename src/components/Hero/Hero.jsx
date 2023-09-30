@@ -27,7 +27,7 @@ const Hero = () => {
             New Winter Collection
           </h1>
           <p className="text-lg">Theres Nothing like Trend</p>
-          <Link href="/products" target="_BLANK">
+          <Link href="/products">
             <button className="bg-buttongold hover:bg-buttongoldhov text-white font-bold py-2 px-4 rounded mt-4 inline-block">
               View All Products
             </button>

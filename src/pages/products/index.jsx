@@ -95,7 +95,7 @@ const AllProducts = () => {
     <div className="flex flex-col md:flex-row gap-4">
       <div
         className={`w-full md:w-1/4  p-4 pt-4 sm:block lg:fixed
-         h-screen mt-[45px] border border-2-white rounded overflow-y-auto top-0 left-0 `}
+         h-screen mt-[8rem] border border-2-white rounded overflow-y-hidden top-0 left-0 `}
       >
         <Filter
           selectedCategories={selectedCategories}
@@ -113,11 +113,11 @@ const AllProducts = () => {
         </h1>
         <div className="h-[calc(100vh-80px)] overflow-y-auto">
           {productsToDisplay.length === 0 ? (
-            <div className="grid place-content-center h-[100vh] text-xl text-red-500 font-bold">
+            <div className="grid place-content-center h-[100vh] text-xl text-red-500 font-bold ">
               No matches found
             </div>
           ) : (
-            <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto p-16 justify-center bg-slate-100 rounded">
+            <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto p-16 justify-center bg-slate-100 rounded bg-text-brown">
               {productsToDisplay.map((product) => {
                 return <ShoppingCard key={product.id} {...product} />
               })}
@@ -129,7 +129,4 @@ const AllProducts = () => {
   )
 }
 
-
 export default AllProducts
-
-
