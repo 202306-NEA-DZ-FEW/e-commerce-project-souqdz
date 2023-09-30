@@ -36,15 +36,20 @@ const Navbar = () => {
           <div className="font-semi-bold text-2xl">
             <a href="/">SOUQDZ</a>{" "}
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+          <nav className="max-md:hidden px-10">
+            <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text[15px]">
               {category.map((cat, index) => (
                 <li key={index}>
-                  <a href={`/categories/${cat}`}>{cat}</a>
+                  <a
+                    href={`/categories/${cat}`}
+                    className="py-3 inline-block w-full"
+                  >
+                    {cat.toUpperCase()}
+                  </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
         <div className="flex items-center space-x-4 ">
           <SearchBar />
@@ -73,7 +78,12 @@ const Navbar = () => {
         <ul className="flex  flex-col text-[15px] opacity-75 px-2">
           {category.map((cat, index) => (
             <li key={index}>
-              <a href={`/categories/${cat}`}>{cat}</a>
+              <a
+                href={`/categories/${cat}`}
+                className="py-3 inline-block w-full"
+              >
+                {cat.toUpperCase()}
+              </a>
             </li>
           ))}
         </ul>
