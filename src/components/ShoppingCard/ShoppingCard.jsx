@@ -20,7 +20,7 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
             {title.length > 25 ? `${title.slice(0, 25)}...` : title}
           </h2>
           <StarRating rating={rating.rate} />
-          <div className="flex flex-wrap items-start gap-16 ">
+          <div className="flex flex-wrap items-start justify-between ">
             <button className="btn bg-buttongold text-brown-text-brown px-4 py-2 hover:bg-buttongoldhov border border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
               add to cart
             </button>
