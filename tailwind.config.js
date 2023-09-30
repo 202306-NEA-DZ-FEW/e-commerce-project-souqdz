@@ -14,6 +14,7 @@ module.exports = {
         buttongold: "#BC9B7F",
         buttongoldhov: "#886333",
       },
+
       backgroundColor: {
         "gold-g": "#7B7255",
         "pale-thing": "#EFEDE9",

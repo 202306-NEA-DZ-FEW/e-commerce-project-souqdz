@@ -3,6 +3,7 @@ import StarRating from "@/components/Rating/StarRating"
 import Hero from "@/components/Hero/Hero"
 import ShoppingCard from "@/components/ShoppingCard/ShoppingCard"
 import Link from "next/link"
+
 export default function Home() {
   const [products, setProducts] = useState([])
 
