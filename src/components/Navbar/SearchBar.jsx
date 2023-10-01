@@ -2,6 +2,7 @@ import React from "react"
 import { BiSearch } from "react-icons/bi"
 import { useState, useEffect } from "react"
 import ShoppingCard from "../ShoppingCard/ShoppingCard"
+import Link from "next/link"
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -19,7 +20,7 @@ const SearchBar = () => {
   const handleSearch = async (e) => {
     e.preventDefault()
     fetchingProducts()
-    // setSearchQuery("")
+    setSearchQuery("")
   }
   const itemsToDisplay = [...result].filter((item) => {
     if (item.title) {
@@ -44,11 +45,20 @@ const SearchBar = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
-      {/* <div className="flex flex-wrap">
-        {itemsToDisplay.map((item) => (
-          <ShoppingCard key={item.id} product={item} />
-        ))}
-      </div> */}
+      {searchQuery && itemsToDisplay.length > 0 && (
+        <div className="dropdown ">
+          <ul className="absolute z-20 rounded h-64 bg-[#e2dfd8] pt-2 pb-2 pl-4 pr-4 overflow-y-auto">
+            {itemsToDisplay.map((item) => (
+              <li
+                className="text-slate-800 hover:bg-slate-800 hover:text-slate-200 hover:rounded"
+                key={item.id}
+              >
+                <Link href={`/products/${item.id}`}>{item.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
