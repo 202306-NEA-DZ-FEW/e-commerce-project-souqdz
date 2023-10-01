@@ -18,19 +18,20 @@ const TeamSection = () => {
 
         <footer class="footer footer-center px-20 bg-base-200 text-base-content rounded">
           <aside>
-            <p className="font-semi-bold text-2xl footer-center">
-              Made with ❤️&☕️ by Team 9ine
-            </p>
+            <p className="font-semi-bold text-2xl footer-center"></p>
           </aside>
           <aside>
             <p class="font-bold">
               Re:Coded Frontend Web Development Bootcamp - Algeria 2023
             </p>
-            <p>Copyright © 2023 - All right reserved</p>
+            <p> Team SouQ DZ © 2023 - All right reserved </p>
           </aside>
         </footer>
         <div className="flex p-0 mx-auto my-0">
-          <a href="https://github.com/202306-NEA-DZ-FEW/e-commerce-project-souqdz">
+          <a
+            href="https://github.com/202306-NEA-DZ-FEW/e-commerce-project-souqdz"
+            target="_BLANK"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-12 w-12 m-0 "
@@ -49,23 +50,33 @@ const TeamSection = () => {
         </div>
       </footer>
       <div
-        onClick={toggleTeamSection}
+        // onClick={toggleTeamSection}
         className="grid cursor-pointer font-bold gap-x-6 md:grid-cols-5 lg:gap-x-12 py-3 px-5 bg-base-200"
       >
-        <span>Hocine Benoudane</span>
-        <span>Youssouf Sergma</span>
-        <span>Manel H Haddoud</span>
-        <span>Amel Batouche</span>
-        <span>Louisa Hamrit</span>
+        <a href="https://github.com/hocine1212" target="_BLANK">
+          Hocine Benoudane
+        </a>
+        <a href="https://github.com/ysergma" target="_BLANK">
+          Youssouf Sergma
+        </a>
+        <a href="https://github.com/hasnahadd" target="_BLANK">
+          Manel H Haddoud
+        </a>
+        <a href="https://github.com/Amel7400" target="_BLANK">
+          Amel Batouche
+        </a>
+        <a href="https://github.com/Polichinell" target="_BLANK">
+          Louisa Hamrit
+        </a>
       </div>
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <button
           onClick={toggleTeamSection}
           class="bg-blue-500 place-self-center	hidden hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           MEET THE TEAM
         </button>
-      </div>
+      </div> */}
       <div
         class="hidden sm:block"
         style={{ display: isTeamSectionVisible ? "block" : "none" }}
