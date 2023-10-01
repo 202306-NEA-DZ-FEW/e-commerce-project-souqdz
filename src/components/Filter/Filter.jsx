@@ -41,12 +41,12 @@ const Filter = ({
         )
       })}
 
-      <div className="flex flex-col  items-start ">
-        <label>Rating:</label>
+      <div className="sm:flex font-semibold text-text-brown sm:flex-wrap md:flex-col  md:flex-nowrap items-start ">
+        <label>Rating :</label>
         {ratingOptions.map((rating, index) => (
           <label className="flex items-center" key={index}>
             <input
-              className="mx-2 rounded-full appearance-none w-4 h-4 border border-gray-300 checked:bg-blue-500 checked:border-transparent "
+              className="mx-2 rounded-full appearance-none w-4 h-4 border border-gray-800 checked:bg-blue-500 checked:border-transparent "
               type="checkbox"
               value={rating}
               checked={selectedRatings.includes(rating)}
@@ -62,12 +62,12 @@ const Filter = ({
         ))}
       </div>
 
-      <div className=" flex flex-col  items-start mt-8">
-        <label>Price Range:</label>
+      <div className=" flex flex-col font-semibold text-text-brown  items-start mt-2">
+        <label>Price Range :</label>
         {priceRanges.map((range, index) => (
           <label className="flex items-center" key={index}>
             <input
-              className="mx-2 rounded-full appearance-none w-4 h-4 border border-gray-300 checked:bg-blue-500 checked:border-transparent "
+              className="mx-2 rounded-full appearance-none w-4 h-4 border border-gray-800 checked:bg-blue-500 checked:border-transparent "
               type="checkbox"
               value={range.value}
               checked={selectedPriceRange.includes(range.value)}
