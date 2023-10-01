@@ -5,7 +5,6 @@ import ShoppingCard from "@/components/ShoppingCard/ShoppingCard"
 import Link from "next/link"
 import Footer from "@/components/Footer/Footer"
 
-
 export default function Home() {
   const [products, setProducts] = useState([])
 
@@ -41,7 +40,7 @@ export default function Home() {
         </Link>
       </div>
 
- <Footer />
+      <Footer />
     </>
   )
 }

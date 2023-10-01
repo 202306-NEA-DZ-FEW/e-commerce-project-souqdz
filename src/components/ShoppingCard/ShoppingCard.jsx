@@ -8,7 +8,6 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
         className={`card w-90 bg-white glass border-gold-g ${styles.shoppingCard}`}
         style={{ minHeight: "450px" }}
         key={id}
-    
       >
         <figure>
           <img
@@ -25,7 +24,6 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
 
           <div className="flex flex-wrap items-start justify-between ">
             <button className="btn bg-buttongold text-brown-text-brown px-4 py-2 hover:bg-buttongoldhov border border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-
               add to cart
             </button>
 
