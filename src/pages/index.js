@@ -3,6 +3,8 @@ import StarRating from "@/components/Rating/StarRating"
 import Hero from "@/components/Hero/Hero"
 import ShoppingCard from "@/components/ShoppingCard/ShoppingCard"
 import Link from "next/link"
+import Footer from "@/components/Footer/Footer"
+
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -38,6 +40,8 @@ export default function Home() {
           </button>
         </Link>
       </div>
+
+ <Footer />
     </>
   )
 }
