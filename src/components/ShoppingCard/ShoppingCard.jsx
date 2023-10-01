@@ -1,6 +1,5 @@
 import StarRating from "../Rating/StarRating"
 import Link from "next/link"
-//import { motion } from "framer-motion";
 import styles from "../../styles/ShoppingCard.module.css"
 export default function ShoppingCard({ id, title, image, price, rating }) {
   return (
@@ -9,8 +8,7 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
         className={`card w-90 bg-white glass border-gold-g ${styles.shoppingCard}`}
         style={{ minHeight: "450px" }}
         key={id}
-        // whileHover={{ scale: 1.05 }} // Scale up on hover
-        // transition={{ duration: 0.2 }} // Animation duration
+    
       >
         <figure>
           <img
@@ -24,8 +22,10 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
             {title.length > 25 ? `${title.slice(0, 25)}...` : title}
           </h2>
           <StarRating rating={rating.rate} />
-          <div className="flex flex-wrap items-start gap-16 ">
-            <button className="btn bg-buttongold text-text-brown px-4 py-2 hover:bg-buttongoldhov border border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
+
+          <div className="flex flex-wrap items-start justify-between ">
+            <button className="btn bg-buttongold text-brown-text-brown px-4 py-2 hover:bg-buttongoldhov border border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
+
               add to cart
             </button>
 
