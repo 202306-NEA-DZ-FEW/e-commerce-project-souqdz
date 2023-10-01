@@ -9,18 +9,27 @@ const TeamSection = () => {
 
   return (
     <footer>
-      <footer className="footer  p-10 bg-base-200 text-base-content rounded">
+      <footer className="footer  p-6 bg-base-200 text-base-content rounded ">
         <nav className="grid grid-flow-col gap-4">
           <div className="font-bold text-2xl">
             <a href="/">SOUQDZ</a>{" "}
           </div>
         </nav>
-        <aside>
-          <p className="font-semi-bold text-2xl">
-            Made with ❤️&☕️ by Team 9ine
-          </p>
-        </aside>
-        <div className="flex p-0 m-0">
+
+        <footer class="footer footer-center px-20 bg-base-200 text-base-content rounded">
+          <aside>
+            <p className="font-semi-bold text-2xl footer-center">
+              Made with ❤️&☕️ by Team 9ine
+            </p>
+          </aside>
+          <aside>
+            <p class="font-bold">
+              Re:Coded Frontend Web Development Bootcamp - Algeria 2023
+            </p>
+            <p>Copyright © 2023 - All right reserved</p>
+          </aside>
+        </footer>
+        <div className="flex p-0 mx-auto my-0">
           <a href="https://github.com/202306-NEA-DZ-FEW/e-commerce-project-souqdz">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,11 +48,20 @@ const TeamSection = () => {
           </a>
         </div>
       </footer>
-
+      <div
+        onClick={toggleTeamSection}
+        className="grid cursor-pointer font-bold gap-x-6 md:grid-cols-5 lg:gap-x-12 py-3 px-5 bg-base-200"
+      >
+        <span>Hocine Benoudane</span>
+        <span>Youssouf Sergma</span>
+        <span>Manel H Haddoud</span>
+        <span>Amel Batouche</span>
+        <span>Louisa Hamrit</span>
+      </div>
       <div className="flex flex-col items-center">
         <button
           onClick={toggleTeamSection}
-          class="bg-blue-500 place-self-center	 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-500 place-self-center	hidden hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           MEET THE TEAM
         </button>
