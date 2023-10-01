@@ -1,7 +1,10 @@
 import Link from "next/link"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import StarRating from "@/components/Rating/StarRating"
 import { productsFetcher } from "@/util/API"
+import { collection, addDoc } from "firebase/firestore"
+import { db } from "@/util/firebase"
+
 function splitTitleIntoLines(title) {
   const words = title.split(" ")
   const lines = []
@@ -18,7 +21,23 @@ function splitTitleIntoLines(title) {
   return lines
 }
 
-export default function productPage({ productData }) {
+export default function ProductPage({ productData }) {
+  const [product, setProduct] = useState()
+  const itemsCollectionRef = collection(db, "items")
+
+  const addProduct = async (e) => {
+    e.preventDefault()
+
+    setProduct(productData)
+    await addDoc(itemsCollectionRef, {
+      name: productData.title,
+      image: productData.image,
+      price: productData.price,
+      uid: productData.id,
+      quantity: 1,
+    })
+  }
+
   return (
     <>
       <div className="min-w-screen min-h-screen bg-gold-g flex items-center p-5 lg:p-10 overflow-hidden relative">
@@ -63,7 +82,10 @@ export default function productPage({ productData }) {
                 </div>
 
                 <div className="inline-block align-bottom">
-                  <button className="bg-buttongold opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold">
+                  <button
+                    onClick={addProduct}
+                    className="bg-buttongold opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"
+                  >
                     <i className="mdi mdi-cart -ml-2 mr-2"></i> ADD TO CART
                   </button>
                 </div>
