@@ -1,23 +1,39 @@
 import React from "react"
+import { doc, updateDoc, deleteDoc } from "firebase/firestore"
+import { db } from "@/util/firebase"
 
 function CartItem({ item, onRemove, onIncrease, onDecrease }) {
-  const handleIncrease = () => {
-    onIncrease(item.id)
+  const itemDocRef = doc(db, "items", item.id)
+  const handleIncrease = async () => {
+    onIncrease(
+      await updateDoc(itemDocRef, {
+        quantity: item.quantity + 1,
+      }),
+    )
   }
 
-  const handleDecrease = () => {
-    onDecrease(item.id)
+  const handleDecrease = async () => {
+    if (item.quantity <= 1) return
+    onDecrease(
+      await updateDoc(itemDocRef, {
+        quantity: item.quantity - 1,
+      }),
+    )
+  }
+
+  const handleRemove = async () => {
+    onRemove(await deleteDoc(doc(db, "items", item.id)))
   }
 
   return (
     <div className="border p-4 mb-4 flex items-center justify-between rounded-3xl shadow-md bg-pale-thing">
       <div className="flex items-center">
-        <img src={item.image} alt={item.title} className="w-20 h-20 mr-4" />
+        <img src={item.image} alt={item.name} className="w-20 h-20 mr-4" />
         <div>
-          <h3 className="text-lg font-semibold text-text-brown">
-            {item.title}
+          <h3 className="text-base font-semibold text-text-brown">
+            {item.name}
           </h3>
-          <p className="text-gray-600">Price: ${item.price.toFixed(2)}</p>
+          <p className="text-gray-600">Price: ${item.price}</p>
           <div className="flex items-center">
             <button
               onClick={handleDecrease}
@@ -37,7 +53,7 @@ function CartItem({ item, onRemove, onIncrease, onDecrease }) {
       </div>
       <button
         className="bg-buttongold text-white px-4 py-2 rounded cursor-pointer"
-        onClick={() => onRemove(item.id)}
+        onClick={handleRemove}
       >
         Remove
       </button>

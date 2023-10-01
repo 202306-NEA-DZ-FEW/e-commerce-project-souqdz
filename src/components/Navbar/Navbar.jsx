@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-x-4 ">
           <SearchBar />
-          <Link href="../components/ShoppingCart/shoppingcart">
+          <Link href="/cart">
             <div className="p-2 bg-gray-100 rounded-full ">
               <CiShoppingCart size={20} />
             </div>

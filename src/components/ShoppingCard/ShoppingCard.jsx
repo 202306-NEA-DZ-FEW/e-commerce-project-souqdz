@@ -1,7 +1,27 @@
 import StarRating from "../Rating/StarRating"
+import { useState } from "react"
 import Link from "next/link"
 import styles from "../../styles/ShoppingCard.module.css"
+import { collection, addDoc } from "firebase/firestore"
+import { db } from "@/util/firebase"
+
 export default function ShoppingCard({ id, title, image, price, rating }) {
+  const [product, setProduct] = useState()
+  const itemsCollectionRef = collection(db, "items")
+
+  const addProduct = async (e) => {
+    e.preventDefault()
+
+    // setProduct(productData)
+    await addDoc(itemsCollectionRef, {
+      name: title,
+      image: image,
+      price: price,
+      uid: id,
+      quantity: 1,
+    })
+  }
+
   return (
     <Link href={`/products/${id}`}>
       <div
@@ -27,7 +47,11 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
             </span>
           </div>
           <div className="flex flex-wrap items-start justify-between ">
-            <button className="btn bg-buttongold text-text-brown px-4 py-2 hover:bg-red-50 border  border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
+
+            <button
+              onClick={addProduct}
+              className="btn bg-buttongold text-text-brown px-4 py-2 hover:bg-red-50 border  border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm"
+            >
               add to cart
             </button>
 
