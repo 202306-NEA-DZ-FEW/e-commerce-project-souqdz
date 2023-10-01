@@ -18,7 +18,7 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
         </figure>
         <div className="card-body text-center">
           <h2 className="card-title text-text-brown mb-2 ">
-            {title.length > 20 ? `${title.slice(0, 20)}...` : title}
+            {title.length > 18 ? `${title.slice(0, 18)}...` : title}
           </h2>
           <div className="flex items-center justify-between mt-2.5 mb-1 mx-2  ">
             <StarRating rating={rating.rate} />
