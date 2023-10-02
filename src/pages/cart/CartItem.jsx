@@ -1,9 +1,11 @@
 import React from "react"
 import { doc, updateDoc, deleteDoc } from "firebase/firestore"
 import { db } from "@/util/firebase"
+import { useCart } from "@/util/context"
 
 function CartItem({ item, onRemove, onIncrease, onDecrease }) {
   const itemDocRef = doc(db, "items", item.id)
+
   const handleIncrease = async () => {
     onIncrease(
       await updateDoc(itemDocRef, {

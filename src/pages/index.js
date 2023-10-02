@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import StarRating from "@/components/Rating/StarRating"
 import Hero from "@/components/Hero/Hero"
 import ShoppingCard from "@/components/ShoppingCard/ShoppingCard"
 import Link from "next/link"
-import Footer from "@/components/Footer/Footer"
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -26,7 +24,7 @@ export default function Home() {
         Products List
       </h1>
       <div className="border-b border-gold-g mb-6"></div>
-      <div className="grid grid-cols-3 gap-6 ml-24 mr-24 my-10">
+      <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-24 mr-24 my-10">
         {products.map((product) => (
           <ShoppingCard key={product.id} {...product} />
         ))}

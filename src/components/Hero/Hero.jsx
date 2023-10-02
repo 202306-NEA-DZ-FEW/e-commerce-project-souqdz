@@ -13,7 +13,8 @@ const Hero = () => {
           layout="responsive"
           objectFit="cover"
         />
-        <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-text-brown text-center">
+
+        <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2  text-text-brown text-center ">
           <h5
             className="text-3xl font-bold mb-2"
             style={{ fontFamily: "Jost, Mooli, sans-serif" }}

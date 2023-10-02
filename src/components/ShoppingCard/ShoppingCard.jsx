@@ -1,18 +1,24 @@
 import StarRating from "../Rating/StarRating"
-import { useState } from "react"
+
 import Link from "next/link"
 import styles from "../../styles/ShoppingCard.module.css"
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "@/util/firebase"
+import { useCart } from "@/util/context"
 
 export default function ShoppingCard({ id, title, image, price, rating }) {
-  const [product, setProduct] = useState()
   const itemsCollectionRef = collection(db, "items")
+  const { addItemToCart, itemCount } = useCart()
+
+  const handleAddToCart = () => {
+    const product = { id, title, image, price }
+    console.log("Adding item to cart:", product)
+    addItemToCart(product)
+  }
 
   const addProduct = async (e) => {
     e.preventDefault()
 
-    // setProduct(productData)
     await addDoc(itemsCollectionRef, {
       name: title,
       image: image,
@@ -20,6 +26,7 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
       uid: id,
       quantity: 1,
     })
+    handleAddToCart()
   }
 
   return (

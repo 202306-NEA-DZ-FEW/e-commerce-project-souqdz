@@ -94,8 +94,8 @@ const AllProducts = () => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       <div
-        className={`w-full md:w-1/4  p-4 pt-2 sm:block lg:fixed
-         h-screen mt-[8rem] border border-2-white rounded overflow-y-hidden top-0 left-0 `}
+        className={` md:w-1/4  p-4  sm:block lg:sticky
+         h-screen mt-8  rounded overflow-y-hidden   `}
       >
         <Filter
           selectedCategories={selectedCategories}
@@ -107,7 +107,7 @@ const AllProducts = () => {
           categories={categories}
         />
       </div>
-      <div className="w-full block sm-m-16 md:m-0 sm:w-full md:w-3/4 lg:w-3/4 ml-0 lg:ml-[25%]">
+      <div className="w-full block sm-m-16 md:m-0 sm:w-full md:w-3/4 lg:w-3/4 ml-0 ">
         <h1 className="text-3xl text-center text-text-brown font-semibold py-2">
           All Products
         </h1>
@@ -125,6 +125,7 @@ const AllProducts = () => {
           )}
         </div>
       </div>
+      <div className="bg-black h-[200px]"></div>
     </div>
   )
 }
