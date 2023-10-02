@@ -47,8 +47,6 @@ export default function CategoryPage() {
               }
             })
           }
-
-          console.log(category)
         }
       })
     }
@@ -62,7 +60,7 @@ export default function CategoryPage() {
             {categories} section
           </h1>
         </div>
-        <div className="grid grid-cols-3 gap-8 ml-24 mr-24 my-10">
+        <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ml-24 mr-24 my-10">
           {products.map((product) => (
             <ShoppingCard key={product.id} {...product} />
           ))}
