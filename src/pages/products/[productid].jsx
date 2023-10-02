@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React, { useState, useEffect } from "react"
+import Image from "next/image"
 import StarRating from "@/components/Rating/StarRating"
 import { productsFetcher } from "@/util/API"
 import { collection, addDoc } from "firebase/firestore"
@@ -45,8 +46,10 @@ export default function ProductPage({ productData }) {
           <div className="md:flex items-center -mx-10">
             <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">
               <div className="relative">
-                <img
+                <Image
                   src={productData.image}
+                  height={300}
+                  width={300}
                   className="w-full relative z-10"
                   alt=""
                 />

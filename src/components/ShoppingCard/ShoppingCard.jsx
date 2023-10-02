@@ -5,6 +5,7 @@ import styles from "../../styles/ShoppingCard.module.css"
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "@/util/firebase"
 import { useCart } from "@/util/context"
+import Image from "next/image"
 
 export default function ShoppingCard({ id, title, image, price, rating }) {
   const itemsCollectionRef = collection(db, "items")
@@ -37,9 +38,11 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
         key={id}
       >
         <figure>
-          <img
+          <Image
             src={image}
             alt={title}
+            height={300}
+            width={200}
             style={{ width: "60%", height: "250px", padding: "1rem" }}
           />
         </figure>

@@ -2,6 +2,7 @@ import React from "react"
 import { doc, updateDoc, deleteDoc } from "firebase/firestore"
 import { db } from "@/util/firebase"
 import { useCart } from "@/util/context"
+import Image from "next/image"
 
 function CartItem({ item, onRemove, onIncrease, onDecrease }) {
   const itemDocRef = doc(db, "items", item.id)
@@ -30,7 +31,13 @@ function CartItem({ item, onRemove, onIncrease, onDecrease }) {
   return (
     <div className="border p-4 mb-4 flex items-center justify-between rounded-3xl shadow-md bg-pale-thing">
       <div className="flex items-center">
-        <img src={item.image} alt={item.name} className="w-20 h-20 mr-4" />
+        <Image
+          height={200}
+          width={200}
+          src={item.image}
+          alt={item.name}
+          className="w-20 h-20 mr-4"
+        />
         <div>
           <h3 className="text-base font-semibold text-text-brown">
             {item.name}
