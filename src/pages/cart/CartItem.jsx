@@ -5,8 +5,8 @@ import { useCart } from "@/util/context"
 import Image from "next/image"
 
 function CartItem({ item, onRemove, onIncrease, onDecrease }) {
-  const itemId=item.id
-  const itemDocRef = doc(db, "items", itemId)
+  
+  const itemDocRef = doc(db, "items", item.id)
 
   const handleIncrease = async () => {
     onIncrease(
@@ -26,7 +26,7 @@ function CartItem({ item, onRemove, onIncrease, onDecrease }) {
   }
 
   const handleRemove = async () => {
-    onRemove(await deleteDoc(doc(db, "items", itemId)))
+    onRemove(await deleteDoc(doc(db, "items", item.id)))
   }
 
   return (
