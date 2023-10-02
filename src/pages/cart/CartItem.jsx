@@ -4,9 +4,9 @@ import { db } from "@/util/firebase"
 import { useCart } from "@/util/context"
 import Image from "next/image"
 
-function CartItem({ item, onRemove, onIncrease, onDecrease }) {
+function CartItem({ id,item, onRemove, onIncrease, onDecrease }) {
   
-  const itemDocRef = doc(db, "items", item.id)
+  const itemDocRef = doc(db, "items", id)
 
   const handleIncrease = async () => {
     onIncrease(
@@ -26,7 +26,7 @@ function CartItem({ item, onRemove, onIncrease, onDecrease }) {
   }
 
   const handleRemove = async () => {
-    onRemove(await deleteDoc(doc(db, "items", item.id)))
+    onRemove(await deleteDoc(doc(db, "items", id)))
   }
 
   return (
