@@ -47,7 +47,6 @@ export default function ShoppingCard({ id, title, image, price, rating }) {
             </span>
           </div>
           <div className="flex flex-wrap items-start justify-between ">
-
             <button
               onClick={addProduct}
               className="btn bg-buttongold text-text-brown px-4 py-2 hover:bg-red-50 border  border-brown-100 btn-xs sm:btn-sm md:btn-sm lg:btn-sm"
