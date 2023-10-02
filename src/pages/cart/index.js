@@ -79,6 +79,7 @@ function CartPage() {
             <CartItem
               key={item.id}
               item={item}
+              id={item.id}
               onRemove={handleRemoveFromCart}
               onIncrease={handleIncreaseQuantity}
               onDecrease={handleDecreaseQuantity}
