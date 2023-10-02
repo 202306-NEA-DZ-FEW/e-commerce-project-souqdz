@@ -35,8 +35,15 @@ const Navbar = () => {
     <div className="px-5 max-w-[1200px] mx-auto bg-grey-900">
       <div className="flex items-center justify-between py-4 relative">
         <div className="flex items-center md:space-x-10 lg:space-x-20">
-          <div className="font-bold text-[#5A5042] text-2xl">
-            <Link href="/">SOUQDZ</Link>
+          <div className="font-bold text-[#5A5042] text-2xl font-sans ">
+            <Link href="/">
+              <span className="text-3xl text-[#a59174]">S</span>
+              <span className="text-3xl text-[#5A5042]">O</span>
+              <span className="text-3xl text-[#a59174]">U</span>
+              <span className="text-3xl text-[#5A5042]">Q</span>
+              <span className="text-3xl text-[#a59174]">D</span>
+              <span className="text-3xl text-[#5A5042]">Z</span>
+            </Link>
           </div>
           <nav className="max-md:hidden px-10">
             <ul className="flex items-center lg:space-x-10 text-[#57462e] font-semibold space-x-7 opacity-70 text[15px]">
