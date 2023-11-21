@@ -20,6 +20,9 @@ function CartPage() {
   }
 
   getListofProducts()
+  useEffect(() => {
+    getListofProducts()
+  }, [])
 
   {
     /* useEffect(() => {
