@@ -35,15 +35,15 @@ function CartItem({ id,item, onRemove, onIncrease, onDecrease }) {
         <Image
           height={200}
           width={200}
-          src={item.image}
-          alt={item.name}
+          src={item?.image}
+          alt={item?.name}
           className="w-20 h-20 mr-4"
         />
         <div>
           <h3 className="text-base font-semibold text-text-brown">
-            {item.name}
+            {item?.name}
           </h3>
-          <p className="text-gray-600">Price: ${item.price}</p>
+          <p className="text-gray-600">Price: ${item?.price}</p>
           <div className="flex items-center">
             <button
               onClick={handleDecrease}
@@ -51,7 +51,7 @@ function CartItem({ id,item, onRemove, onIncrease, onDecrease }) {
             >
               -
             </button>
-            <p className="text-gray-600 px-2">{item.quantity}</p>
+            <p className="text-gray-600 px-2">{item?.quantity}</p>
             <button
               onClick={handleIncrease}
               className="bg-buttongold text-white px-2 py-1 rounded-r cursor-pointer"
