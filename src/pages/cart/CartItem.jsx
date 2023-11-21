@@ -4,12 +4,8 @@ import { db } from "@/util/firebase"
 import { useCart } from "@/util/context"
 import Image from "next/image"
 
-function CartItem({ id,item, onRemove, onIncrease, onDecrease }) {
-  if (id === undefined) {
-    console.error('CartItem: "id" prop is undefined');
-    // You can also throw an error to stop rendering
-    // throw new Error('CartItem: "id" prop is undefined');
-  }
+function CartItem({ item, onRemove, onIncrease, onDecrease }) {
+  const { id } = item
   
   const itemDocRef = doc(db, "items", id)
 
