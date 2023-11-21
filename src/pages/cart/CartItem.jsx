@@ -11,16 +11,16 @@ function CartItem({ id,item, onRemove, onIncrease, onDecrease }) {
   const handleIncrease = async () => {
     onIncrease(
       await updateDoc(itemDocRef, {
-        quantity: item.quantity + 1,
+        quantity: item?.quantity + 1,
       }),
     )
   }
 
   const handleDecrease = async () => {
-    if (item.quantity <= 1) return
+    if (item?.quantity <= 1) return
     onDecrease(
       await updateDoc(itemDocRef, {
-        quantity: item.quantity - 1,
+        quantity: item?.quantity - 1,
       }),
     )
   }
